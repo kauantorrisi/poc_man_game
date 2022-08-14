@@ -66,6 +66,7 @@ class _GameState extends State<Game> {
         directional: JoystickDirectional(
           margin: const EdgeInsets.only(left: 200, bottom: 100),
           color: Colors.yellowAccent,
+          size: 100,
         ),
         keyboardConfig: KeyboardConfig(),
       ),
