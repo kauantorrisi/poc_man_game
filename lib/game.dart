@@ -64,7 +64,6 @@ class _GameState extends State<Game> {
     return BonfireTiledWidget(
       joystick: Joystick(
         directional: JoystickDirectional(
-          margin: const EdgeInsets.only(left: 200, bottom: 100),
           color: Colors.yellowAccent,
           size: 100,
         ),
