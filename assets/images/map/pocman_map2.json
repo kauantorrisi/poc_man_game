@@ -2119,7 +2119,7 @@
                  "rotation":269.833,
                  "visible":true,
                  "width":4,
-                 "x":138.0955,
+                 "x":136.0955,
                  "y":61.5
                 }, 
                 {
@@ -2163,7 +2163,7 @@
                  "rotation":0,
                  "visible":true,
                  "width":4,
-                 "x":178.654,
+                 "x":180.654,
                  "y":58.71875
                 }, 
                 {
@@ -2186,7 +2186,7 @@
                  "visible":true,
                  "width":4,
                  "x":146.046,
-                 "y":54.079
+                 "y":52.079
                 }, 
                 {
                  "class":"",
@@ -2241,7 +2241,7 @@
                  "visible":true,
                  "width":4,
                  "x":169.546,
-                 "y":54.329
+                 "y":52.329
                 }, 
                 {
                  "class":"",
@@ -2508,7 +2508,7 @@
  "nextobjectid":230,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.9.0",
+ "tiledversion":"1.9.1",
  "tileheight":8,
  "tilesets":[
         {
