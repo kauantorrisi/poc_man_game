@@ -1,6 +1,6 @@
-# PocMan Game
+# Poc-Man Game
 
-processo seletivo escribo - teste técnico 02.
+Processo Seletivo Escribo - Teste Técnico 02.
 
 ## Como rodar meu projeto?
 
@@ -12,11 +12,11 @@ processo seletivo escribo - teste técnico 02.
 
 - Acesse a pasta pocman_game dentro do terminal.
 
-- Executar o programa rodando o comando: lib/flutter run main.dart
+- Executar o programa rodando o comando: lib/flutter run main.dart ou apertando F5.
 
 # Funcionalidades que consegui implementar
 
-- Mapa feito com Tiled, contendo paredes, pac-man, fantasmas e a comida.
+- Mapa feito com Tiled.
 
 - Sistema de consumo da comida.
 
@@ -24,17 +24,19 @@ processo seletivo escribo - teste técnico 02.
 
 - Sistema de movimento aleatório dos fantasmas.
 
+- Movimento dos fantasmas ao estarem pertos do poc-man.
+
 - Fim de jogo ao colidir com fantasmas.
 
 - Sistema de comer os fantasmas.
 
 - Sistema de pontuação e reinício do jogo ao terminarem as comidas.
 
-- Movimento dos fantasmas ao estarem pertos do poc-man.
-
 # Funcionalidades que não consegui implementar
 
 - Sistema de vida.
+
+- Sistema de movimentção do poc-man não está perfeito.
 
 
 # Boa sorte e bom jogo! ^^
