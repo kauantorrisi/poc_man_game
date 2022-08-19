@@ -1,16 +1,40 @@
-# pocman_game
+# PocMan Game
 
-A new Flutter project.
+processo seletivo escribo - teste técnico 02.
 
-## Getting Started
+## Como rodar meu projeto?
 
-This project is a starting point for a Flutter application.
+- Aqui no repositório clique no botão Code e copie o link HTTPS.
 
-A few resources to get you started if this is your first Flutter project:
+- Entre em uma pasta de sua preferência por meio de um terminal também de sua preferência.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- No terminal, dentro da pasta, digite o comando: git clone [link copiado]
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Acesse a pasta pocman_game dentro do terminal.
+
+- Executar o programa rodando o comando: lib/flutter run main.dart
+
+# Funcionalidades que consegui implementar
+
+- Mapa feito com Tiled, contendo paredes, pac-man, fantasmas e a comida.
+
+- Sistema de consumo da comida.
+
+- Sistema de colisão do poc-man e fantasmas com as paredes.
+
+- Sistema de movimento aleatório dos fantasmas.
+
+- Fim de jogo ao colidir com fantasmas.
+
+- Sistema de comer os fantasmas.
+
+- Sistema de pontuação e reinício do jogo ao terminarem as comidas.
+
+- Movimento dos fantasmas ao estarem pertos do poc-man.
+
+# Funcionalidades que não consegui implementar
+
+- Sistema de vida.
+
+
+# Boa sorte e bom jogo! ^^
