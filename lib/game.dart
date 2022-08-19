@@ -20,60 +20,30 @@ class Game extends StatefulWidget {
 }
 
 class _GameState extends State<Game> {
-  final TiledWorldMap map1 = TiledWorldMap(
-    'map/pocman_map.json',
-    objectsBuilder: {
-      'blueGhost': (properties) => BlueGhost(properties.position),
-      'greenGhost': (properties) => GreenGhost(properties.position),
-      'yellowGhost': (properties) => YellowGhost(properties.position),
-      'redGhost': (properties) => RedGhost(properties.position),
-      'small_coin': (properties) => SmallCoin(properties.position),
-      'big_coin': (properties) => BigCoin(properties.position),
-    },
-  );
-
-  final TiledWorldMap map2 = TiledWorldMap(
-    'map/pocman_map2.json',
-    objectsBuilder: {
-      'blueGhost': (properties) => BlueGhost(properties.position),
-      'greenGhost': (properties) => GreenGhost(properties.position),
-      'yellowGhost': (properties) => YellowGhost(properties.position),
-      'redGhost': (properties) => RedGhost(properties.position),
-      'small_coin': (properties) => SmallCoin(properties.position),
-      'big_coin': (properties) => BigCoin(properties.position),
-    },
-  );
-
-  Vector2 position = Vector2(5 * tileSize, 10 * tileSize);
-
-  @override
-  void initState() {
-    switch (widget.stage) {
-      case 1:
-        position = Vector2(5 * tileSize, 10 * tileSize);
-        break;
-      case 2:
-        position = Vector2(19 * tileSize, 13 * tileSize);
-        break;
-    }
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return BonfireTiledWidget(
       joystick: Joystick(
         directional: JoystickDirectional(
           color: Colors.yellowAccent,
-          size: 100,
         ),
         keyboardConfig: KeyboardConfig(),
       ),
-      map: widget.stage == 1 ? map1 : map2,
+      map: TiledWorldMap(
+        'map/pocman_map.json',
+        objectsBuilder: {
+          'blueGhost': (properties) => BlueGhost(properties.position),
+          'greenGhost': (properties) => GreenGhost(properties.position),
+          'yellowGhost': (properties) => YellowGhost(properties.position),
+          'redGhost': (properties) => RedGhost(properties.position),
+          'small_coin': (properties) => SmallCoin(properties.position),
+          'big_coin': (properties) => BigCoin(properties.position),
+        },
+      ),
       components: [
-        MyGameController(widget.stage),
+        MyGameController(),
       ],
-      player: Pocman(position),
+      player: Pocman(Vector2(0.25 * tileSize, 0.25 * tileSize)),
       overlayBuilderMap: {
         Interface.overlayKey: ((context, game) => Interface(game: game))
       },
@@ -82,7 +52,7 @@ class _GameState extends State<Game> {
       ],
       cameraConfig: CameraConfig(
         moveOnlyMapArea: true,
-        zoom: 5.5,
+        zoom: 5,
       ),
     );
   }

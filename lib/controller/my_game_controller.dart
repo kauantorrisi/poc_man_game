@@ -7,9 +7,6 @@ import '../main.dart';
 class MyGameController extends GameComponent {
   bool endGame = false;
   bool gameOver = false;
-  final int stage;
-
-  MyGameController(this.stage);
 
   @override
   void update(double dt) {
@@ -23,27 +20,6 @@ class MyGameController extends GameComponent {
 
     if (checkInterval('end game', 500, dt)) {
       if (gameRef.decorations().isEmpty && !endGame) {
-        endGame = true;
-        showDialog(
-            context: context,
-            builder: (context) {
-              return AlertDialog(
-                content: const Text('Parábens, você conseguiu!'),
-                actions: [
-                  TextButton(
-                    child: const Text('Próxima fase!'),
-                    onPressed: () {
-                      _goStage(stage + 1);
-                    },
-                  )
-                ],
-              );
-            });
-      }
-    }
-
-    if (checkInterval('end game', 500, dt)) {
-      if (gameRef.decorations().isEmpty && !endGame && stage == 2) {
         endGame = true;
         showDialog(
             context: context,
@@ -73,17 +49,11 @@ class MyGameController extends GameComponent {
                 content: const Text('Game Over!'),
                 actions: [
                   TextButton(
-                    child: const Text('Tentar novamente!'),
-                    onPressed: () {
-                      if (stage == 1) {
-                        _goStage(stage);
+                      child: const Text('Tentar novamente!'),
+                      onPressed: () {
+                        _restart(1);
                         died = false;
-                      } else {
-                        _goStage(stage - 1);
-                        died = false;
-                      }
-                    },
-                  ),
+                      }),
                   TextButton(
                     child: const Text('Ir para o inicio!'),
                     onPressed: () {
@@ -99,7 +69,7 @@ class MyGameController extends GameComponent {
     super.update(dt);
   }
 
-  void _goStage(int newStage) {
+  void _restart(int newStage) {
     Navigator.of(context).pushAndRemoveUntil(
         MaterialPageRoute(builder: (context) {
       return Game(stage: newStage);

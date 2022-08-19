@@ -9,7 +9,7 @@ class GreenGhost extends SimpleEnemy
   GreenGhost(Vector2 position)
       : super(
           position: position,
-          size: Vector2(tileSize, tileSize),
+          size: Vector2.all(sizeGhost),
           animation: SimpleDirectionAnimation(
             idleRight: GreenGhostSpriteSheet.greenGhostRight,
             idleLeft: GreenGhostSpriteSheet.greenGhostLeft,
@@ -28,7 +28,7 @@ class GreenGhost extends SimpleEnemy
     setupCollision(
       CollisionConfig(
         collisions: [
-          CollisionArea.circle(radius: 4),
+          CollisionArea.circle(radius: 2.5, align: Vector2.all(0.75)),
         ],
       ),
     );
@@ -50,15 +50,12 @@ class GreenGhost extends SimpleEnemy
         if (isScared == false) {
           seeAndMoveToPlayer(
             closePlayer: (player) {},
-            radiusVision: tileSize * 2,
+            radiusVision: 30,
             margin: 0,
           );
         } else {
           runRandomMovement(
             dt,
-            speed: 22,
-            minDistance: 0,
-            maxDistance: 99999999,
             timeKeepStopped: 0,
           );
         }
@@ -66,13 +63,10 @@ class GreenGhost extends SimpleEnemy
       notObserved: () {
         runRandomMovement(
           dt,
-          speed: 22,
-          minDistance: 0,
-          maxDistance: 99999999,
           timeKeepStopped: 0,
         );
       },
-      radiusVision: tileSize * 2,
+      radiusVision: 30,
     );
 
     if (isScared == true) {

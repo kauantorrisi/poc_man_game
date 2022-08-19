@@ -11,6 +11,7 @@ int score = 0;
 bool isScared = false;
 bool died = false;
 double timer = 200;
+double sizeGhost = 6;
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -22,12 +23,14 @@ class MyApp extends StatelessWidget {
       title: 'PocMan',
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        pageTransitionsTheme: PageTransitionsTheme(builders: {
-          TargetPlatform.android: FadePageTransition(),
-          TargetPlatform.iOS: FadePageTransition(),
-          TargetPlatform.macOS: FadePageTransition(),
-          TargetPlatform.windows: FadePageTransition(),
-        }),
+        pageTransitionsTheme: PageTransitionsTheme(
+          builders: {
+            TargetPlatform.android: FadePageTransition(),
+            TargetPlatform.iOS: FadePageTransition(),
+            TargetPlatform.macOS: FadePageTransition(),
+            TargetPlatform.windows: FadePageTransition(),
+          },
+        ),
       ),
       home: const HomePage(),
     );

@@ -19,13 +19,13 @@ class Pocman extends SimplePlayer with ObjectCollision {
               runDown: PlayerSpriteSheet.pocmanDown,
               runLeft: PlayerSpriteSheet.pocmanLeft,
               runUp: PlayerSpriteSheet.pocmanUp),
-          size: Vector2(tileSize, tileSize),
+          size: Vector2.all(6),
           speed: 30,
         ) {
     setupCollision(
       CollisionConfig(
         collisions: [
-          CollisionArea.circle(radius: 4),
+          CollisionArea.circle(radius: 2.5, align: Vector2.all(0.75)),
         ],
       ),
     );
